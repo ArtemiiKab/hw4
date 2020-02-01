@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Redirect, RouteChildrenProps } from "react-router-dom";
-import { Login } from "./LogIn";
+import { Login } from "./Login";
 import { Dashboard } from "./Dashboard";
 import { NotFound } from "./NotFound";
 import { OAuth } from "./OAuth";
@@ -19,11 +19,7 @@ export const routes: Array<AppRoute> = [
     render: (props: any) => <Login {...props} />,
     title: "Login"
   },
-  {
-    path: "/dashboard",
-    title: "Dashboard",
-    render: (props: RouteChildrenProps) => <Dashboard {...props} />
-  },
+
   {
     path: "/",
     isHidden: true,

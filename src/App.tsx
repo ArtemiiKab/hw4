@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import { setToLocalStorage, getFromLocalStorage } from "./utils";
 import { Dashboard } from "./Dashboard";
-import { Login } from "./LogIn";
+import { Login } from "./Login";
 import { routes, AppRoute } from "./routes";
 import { OAuth } from "./OAuth";
 
@@ -71,6 +71,10 @@ export class App extends React.Component<any, AppState> {
             render={(props: RouteChildrenProps) => (
               <OAuth {...props} onSetToken={this.setToken} />
             )}
+          />
+          <Route
+            path="/dashboard"
+            render={props => <Dashboard {...props} token={this.state.token} />}
           />
           <Redirect to="/404" />
         </Switch>

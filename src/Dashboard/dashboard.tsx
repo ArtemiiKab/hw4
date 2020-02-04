@@ -1,37 +1,12 @@
 import React, { FunctionComponent } from "react";
 import { RouteChildrenProps } from "react-router-dom";
+import { Profile } from "../Profile";
 const { REACT_APP_API_KEY } = process.env;
 
 interface DashboardProps extends RouteChildrenProps {
   hello?: string;
   token?: string;
 }
-/*
-export const Dashboard: FunctionComponent<DashboardProps> = ({
-  token,
-  ...rest
-}) => {
-  const [data, getData] = React.useState([]);
-
-  const getBoards = () => {
-    fetch(
-      `https://api.trello.com/1/members/artemiikabanov/boards?key=${REACT_APP_API_KEY}&token=${token}`
-    )
-      .then(res => res.json())
-      .then(json => getData(json));
-  };
-  console.log(data);
-
-  return (
-    <div>
-      <div>Dashboard</div>
-      <button onClick={getBoards}>Show Boards</button>
-      {data.length !== 0 && data.map((boards, index) => <div>{}</div>)}
-    </div>
-  );
-};
-
-*/
 
 interface State {
   name: string;
@@ -53,6 +28,7 @@ export class Dashboard extends React.Component<DashboardProps, State> {
     )
       .then(it => it.json())
       .then(it => this.setState({ boards: it }));
+    console.log(this.state.boards);
   };
 
   renderBoards() {
@@ -71,6 +47,7 @@ export class Dashboard extends React.Component<DashboardProps, State> {
         <div className="board_flex-row">
           {this.state.boards.length > 0 ? this.renderBoards() : "Loading"}
         </div>
+        <Profile {...this.props}></Profile>
       </div>
     );
   }

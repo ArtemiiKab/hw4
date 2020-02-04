@@ -11,6 +11,7 @@ import { Dashboard } from "./Dashboard";
 import { Login } from "./Login";
 import { routes, AppRoute } from "./routes";
 import { OAuth } from "./OAuth";
+import { Profile } from "./Profile";
 import "./App.css";
 
 const TOKEN_STORAGE_KEY = "TOKEN";
@@ -74,6 +75,10 @@ export class App extends React.Component<any, AppState> {
           <Route
             path="/dashboard"
             render={props => <Dashboard {...props} token={this.state.token} />}
+          />
+          <Route
+            path="/profile"
+            render={props => <Profile {...props} token={this.state.token} />}
           />
           <Redirect to="/404" />
         </Switch>

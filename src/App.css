@@ -44,3 +44,18 @@ h2 {
   border: solid 1px azure;
   color: azure;
 }
+
+.avatar_height {
+  height: 22vh;
+  width: 10vw;
+  border-radius: 50%;
+  border: solid 1px azure;
+}
+
+.user_info {
+  margin-left: 10%;
+  font-size: large;
+  padding: 10px;
+  border: solid 1px azure;
+  width: 15%;
+}

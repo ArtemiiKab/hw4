@@ -49,22 +49,26 @@ export class Dashboard extends React.Component<DashboardProps, State> {
 
   private requestUrl = () => {
     fetch(
-      `https://api.trello.com/1/members/artemiikabanov/boards?&key=${REACT_APP_API_KEY}&token=${this.props.token}`
+      `https://api.trello.com/1/members/me/boards?&key=${REACT_APP_API_KEY}&token=${this.props.token}`
     )
       .then(it => it.json())
       .then(it => this.setState({ boards: it }));
   };
 
   renderBoards() {
-    return this.state.boards.map(board => <div>{board.name}</div>);
+    return this.state.boards.map(board => (
+      <div className="board_background">{board.name}</div>
+    ));
   }
 
   render() {
     return (
       <div>
         <h2 onClick={this.goBack}>Go back from Dashboard</h2>
-        <button onClick={this.requestUrl}>Show boards</button>
-        <div>
+        <div className="btn_center" onClick={this.requestUrl}>
+          Show boards
+        </div>
+        <div className="board_flex-row">
           {this.state.boards.length > 0 ? this.renderBoards() : "Loading"}
         </div>
       </div>

@@ -1,0 +1,46 @@
+.header_and_content {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 10px;
+  justify-content: center;
+}
+div {
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+}
+
+.btn_center {
+  display: flex;
+  margin-left: 45%;
+  max-width: 10%;
+  cursor: pointer;
+  background-color: brown;
+  text-align: center;
+  border: solid 1px azure;
+}
+
+.login_center {
+  text-align: center;
+  margin: 10px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.board_flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.board_background {
+  background-color: #24252a;
+  margin: 5%;
+  padding: 5px;
+  border: solid 1px azure;
+  color: azure;
+}

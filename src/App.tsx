@@ -11,6 +11,7 @@ import { Dashboard } from "./Dashboard";
 import { Login } from "./Login";
 import { routes, AppRoute } from "./routes";
 import { OAuth } from "./OAuth";
+import "./App.css";
 
 const TOKEN_STORAGE_KEY = "TOKEN";
 
@@ -45,9 +46,7 @@ export class App extends React.Component<any, AppState> {
       <header>
         {routes.map((route: AppRoute, index: number) =>
           route.isHidden ? null : (
-            <Link key={index} to={route.path}>
-              {route.title}
-            </Link>
+            <Link className="link_padding" key={index} to={route.path}></Link>
           )
         )}
       </header>
@@ -84,7 +83,7 @@ export class App extends React.Component<any, AppState> {
 
   public render() {
     return (
-      <div>
+      <div className="header_and_content">
         {this.renderHeader()}
         {this.renderContent()}
       </div>
